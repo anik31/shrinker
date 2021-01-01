@@ -1,0 +1,20 @@
+{
+  "name": "shrink-url",
+  "version": "1.0.0",
+  "description": "URL shortener application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aniket",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "clipboard": "^2.0.6",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.7",
+    "shortid": "^2.2.16"
+  }
+}

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.1.1">
+    <title>Shrinker</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sign-in/">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <!-- Favicons -->
+<link rel="icon" href="https://railsware.com/blog/wp-content/uploads/2017/12/URL-shortening.png">
+<meta name="theme-color" content="#563d7c">
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    <!-- Custom styles for this template -->
+    <link href="styles.css" rel="stylesheet">
+  </head>
+  <body class="text-center">
+    <form class="form-signin" method="POST" action='/'>
+      <img class="mb-4" src="https://img.talkandroid.com/uploads/2014/03/google_url_shortener_app_icon-450x450.png" alt="" width="72" height="72">
+      <h1 class="h3 mb-3 font-weight-normal">Shrinker</h1>
+      <input type="url" name="url" class="form-control" placeholder="Enter URL" required autofocus>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Shrink !</button>
+    </form>
+    <div class="short-url">
+      <% if (locals.short_url) { %>
+
+
+        <div class="input-group">
+          <span class="h4 font-weight-light">Shrinked URL : </span>
+          <input id="foo" type="text" value="<%= short_url %>">
+          <span class="input-group-button">
+          <button class=" copy-btn" type="button" data-clipboard-demo="" data-clipboard-target="#foo">
+          <img class="clippy" src="https://clipboardjs.com/assets/images/clippy.svg" width="13" alt="Copy to clipboard">
+          </button>
+          </span>
+          </div>
+      <% } %>
+    </div>
+    <footer>
+      <p class="mt-5 mb-3 text-muted">&copy; <a class="links" target="blank" href="https://github.com/anik31">Aniket Prakash</a></p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+    <script>
+      var clipboard = new ClipboardJS('.copy-btn');
+
+      clipboard.on('success', function(e) {
+          console.log(e);
+      });
+      clipboard.on('error', function(e) {
+          console.log(e);
+      });
+      </script>
+  </body>
+</html>
