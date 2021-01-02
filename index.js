@@ -34,11 +34,11 @@ app.post('/',(req,res)=>{
     ShortUrl.exists({ url }).then(exists => {
         if (exists) {
             ShortUrl.findOne({url},(err,url)=>{
-            res.render('index', {short_url: `${req.headers.host}/${url.shortId}`});
+            res.render('index', {short_url: `${req.hostname}/${url.shortId}`});
             });
         } else {
             const shortUrl = new ShortUrl({url:url,shortId:shortid.generate()});
-            shortUrl.save().then(res.render('index',{short_url: `${req.headers.host}/${shortUrl.shortId}`}));                
+            shortUrl.save().then(res.render('index',{short_url: `${req.hostname}/${shortUrl.shortId}`}));                
         }
       })
 })
